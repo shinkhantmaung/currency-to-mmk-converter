@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Currency to MMK Converter",
-    "version": "1.0",
+    "version": "0.1",
     "description": "Convert all displayed currencies on webpages to Burmese Kyat (MMK).",
     "permissions": [
         "scripting",
@@ -12,12 +12,8 @@
     ],
     "content_scripts": [
         {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content.js"
-            ]
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
         }
     ],
     "action": {
