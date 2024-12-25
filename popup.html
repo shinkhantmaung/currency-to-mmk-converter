@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency to MMK Converter</title>
+    <style>
+        body {
+            min-width: 300px;
+            /* your desired width */
+            max-width: 100%;
+            position: relative;
+            vertical-align: middle;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #rate-container {
+            margin-top: 20px;
+        }
+
+        #rate-container span {
+            font-weight: bold;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input:checked+.slider {
+            background-color: #007BFF;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        #status {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Currency to MMK Converter</h2>
+    <div class="toggle-container">
+        <label class="toggle">
+            <input id="toggle" type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div id="status">Extension is <strong>OFF</strong></div>
+    <div id="rate-container">
+        <p>Current Exchange Rate:</p>
+        <span id="exchange-rate-display">$1 = Loading...</span>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
